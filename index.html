@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Угадай число</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2 class="header_logo">Угадай число</h2>
+        </header>
+
+        <main class="main">
+
+            <div class="wrapper">
+                <h2 class="title">Выберите диапазон случайного числа</h2>
+                <div class="input_container">
+                    <label class="placeholder">От 1 до <span id="max-number">100</span></label>
+                    <input type="range" min="100" value="100" max="1000" id="level_input" />
+                </div>
+                <div class="button_container">
+                    <button id="make-wish" type="button" class="button">Загадать</button>
+                    <div class="make_wish_wrapper">
+                        <span class="make_wish_text">Число загадано</span>
+                        <button type="button" id="reset-button">Сбросить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <h2 class="title">Теперь введите предполагаемое число от 1 до <span id="max-number">100</span></h2>
+                <div class="input_container">
+                    <label class="placeholder">Ваше число:</label>
+                    <input type="number" autocomplete="off" id="num_input" class="num_input" />
+                </div>
+                <div class="button_container">
+                    <button id="result" type="button" class="button">Результат</button>
+                </div>
+            </div>
+
+            <div id="result_container"></div>
+
+        </main>
+
+    </div>
+    
+    <script src="./js/index.js"></script>
+</body>
+</html>
