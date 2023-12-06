@@ -38,7 +38,7 @@ function getResult() {
         resultContainer.style.transform = 'translateX(0)';
         resultContainer.style.transition = '.2s ease';
 
-        if (randomNumber !== 0) {
+        if ((randomNumber !== 0) && (+numInput.value > 0) && (+numInput.value <= +rangeInput.value)) {
             tries++;
             totalTries++;
         }
@@ -46,6 +46,7 @@ function getResult() {
         printResult();
         if (tries === 3) tries = 0;
         numInput.value = '';
+        
     } else {
         numInput.classList.remove('num_input');
         numInput.classList.add('error_num_input');
@@ -75,6 +76,13 @@ function getResult() {
                 </div>
             `
             document.getElementById('new-game').addEventListener('click', reset);
+
+        } else if (+numInput.value < 0 || +numInput.value > +rangeInput.value) {
+            resultContainer.innerHTML = `
+                <div class="error_result_content">
+                    <div class="result_title">Ваше число должно быть в диапазоне от 1 до ${+rangeInput.value}</span></div>
+                </div>
+            `
         } else {
             resultContainer.innerHTML = `
                 <div class="error_result_content">
